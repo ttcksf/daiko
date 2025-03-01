@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap");
+@font-face {
+  font-family: "Syne";
+  src: url("./fonts/Syne-Medium.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Noto Sans JP", serif;
+  line-height: 1.5;
+  font-weight: 500;
+  font-size: 16px;
+  color: #273943;
+}
+ul,
+li {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+img {
+  border: none;
+  vertical-align: bottom;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  opacity: 0.7;
+}
+.blue {
+  color: #55a2e3;
+}
+/* スマホ用の表示の時はis-pcは非表示 */
+@media (max-width: 767px) {
+  .pc {
+    display: none !important;
+  }
+}
+/* PC用の表示の時はis-spは非表示 */
+@media (min-width: 768px) {
+  .sp {
+    display: none !important;
+  }
+}
+/* コンテンツ幅
+------------------------------*/
+/* .inner {
+  width: 1432px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+@media (max-width: 767px) {
+  .inner {
+    padding: 0 min(60px, 8vw);
+  }
+} */
+
+/* fv */
+.fv h1 {
+  font-size: 40px;
+  font-weight: 700;
+}
+.fv p {
+  font-size: 30px;
+}
+.fv span.underline {
+  border-bottom: 2px solid #273943;
+}
