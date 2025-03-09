@@ -1,0 +1,39 @@
+// ------------------------------------
+// フォント
+// ------------------------------------
+$font-base: "Noto Sans JP", sans-serif;
+
+@font-face {
+	font-family: 'Syne';
+	src: url('../font/Syne-Medium.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+$font-Syne: 'Syne', sans-serif;
+
+// ------------------------------------
+// カラー
+// ------------------------------------
+$color-text: #273943;
+
+// ------------------------------------
+// コンテンツ幅
+// ------------------------------------
+$layout-width-inner: 1000px;
+
+// ------------------------------------
+// ブレークポイント
+// ------------------------------------ 
+$breakpoints: (
+  "sp": "(max-width: 767px)",
+  "pc": "(min-width: 768px)",
+);
+
+// メディアクエリ
+@mixin mq($breakpoint: sp) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
