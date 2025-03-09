@@ -1,0 +1,356 @@
+@use "./variable" as *;
+
+/*------------------------------
+common
+------------------------------*/
+body{
+    word-break: break-all;
+    color: $color-text;
+    font-family: $font-base;
+    &.is-active{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;/* スクロールバー補完 */
+    }
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+/* スマホ用の表示の時はis-pcは非表示 */
+@include mq('sp') {
+    .pc {
+        display: none !important;
+    }
+}
+
+/* PC用の表示の時はis-spは非表示 */
+@include mq('pc') {
+    .sp {
+        display: none !important;
+    }
+}
+
+/* コンテンツ幅
+------------------------------*/
+.inner {
+    width: $layout-width-inner;
+    max-width: 90%;
+    margin: 0 auto;
+    @include mq('sp'){
+        width: 400px;
+        max-width: 93%;
+    }
+}
+
+.u-inner-890{
+    @include mq('pc'){
+        width: 890px;
+    }
+}
+
+
+/* セクション余白
+------------------------------*/
+section{
+    padding: 70px 0!important;
+    @include mq('sp'){
+        padding: 30px 0!important;
+    }
+}
+
+
+/* タイトル
+------------------------------*/
+.c-section-title{
+    font-size: min(3.5rem,calc(100vw * (30/768)));
+    font-weight: 700;
+    line-height: (52 / 35);
+    letter-spacing: 0.06em;
+    text-align: center;
+    @include mq('sp') {
+        font-size: 2.4rem;
+    }
+}
+
+/* テキスト
+------------------------------*/
+.u-text-wh{
+    color: #fff;
+}
+
+.u-text-underline {
+    display: inline-block;
+    position: relative;
+    font-feature-settings: "palt";
+    letter-spacing: 0.05em;
+    &::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background:#ff5b00;
+        width: 100%;
+        height: 4px;
+    }
+}
+
+/* ボタン
+------------------------------*/
+.c-button-tel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    max-width: 100%;
+    border-radius: 10px;
+    padding: 2%;
+    border: 2px solid #37629f;
+    background: #fff;
+    color: #37629f;
+    position: relative;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 7%;
+        transform: translateY(-50%);
+        background: url(../img/icon_tel.png) no-repeat center center /contain;
+        width: 8%;
+        aspect-ratio: 54/54;
+    }
+    @include mq('sp') {
+        width: 250px;
+    }
+}
+
+.c-button-tel__number{
+    display: block;
+    font-size: 3.6rem;
+    font-weight: 700;
+    text-align: center;
+    @include mq('sp') {
+        font-size: 2.4rem;
+    }
+}
+
+.c-button-tel__note{
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.c-button-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    max-width: 100%;
+    border-radius: 10px;
+    // padding: 13px 0 13px 25px;
+    padding: 2%;
+    background : linear-gradient(90deg, rgba(37, 136, 191, 1) 0%, rgba(128, 153, 191, 1) 100%);
+    position: relative;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        transform: translateY(-50%);
+        background: url(../img/icon_mail.png) no-repeat center center /contain;
+        width: 7%;
+        aspect-ratio: 41/31;
+    }
+    @include mq('sp') {
+        width: 250px;
+    }
+}
+
+.c-button-form__text{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: (36 / 25);
+    letter-spacing: 0.085em;
+    color: #fff;    
+    @include mq('sp') {
+        font-size: 2.1rem;
+    }
+}
+
+.c-button-form__subtext{
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 500;
+    @include mq('sp') {
+        font-size: 1.4rem;
+    }
+}
+
+/* チャット
+------------------------------*/
+.c-chat-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &:nth-child(n + 2){
+        margin-top: 2%;
+    }
+    @include mq('sp'){
+        &:nth-child(n + 2){
+            margin-top: 5%;
+        }   
+    }
+}
+
+.c-chat-item--right{
+    flex-direction: row-reverse;
+    .c-chat-commnet{
+        &::before{
+            display: none;
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -40px;
+            transform: translate(-50%, -50%);
+            -webkit-clip-path: polygon(100% 50%, 0 0, 0 100%);
+            clip-path: polygon(100% 50%, 0 0, 0 100%);
+            width: 23px;
+            aspect-ratio: 23/22;
+        }
+        p{
+            width: fit-content;
+            margin: 0 auto;
+        }
+    }
+    .c-chat-icon{
+        text-align: right;
+    }
+    @media screen and (max-width:999px) {
+        
+    }
+    @include mq('sp') {
+        .c-chat-commnet{
+            &::after{
+                right: -30px;
+                width: 18px;
+            }
+        }
+    }
+}
+
+.c-chat-icon {
+    width: 200px;
+    img{
+        width: 138px;
+    }
+    @media screen and (max-width:999px) {
+        width: 120px;
+    }
+    @include mq('sp') {
+        width: 21%;
+        img{
+            width: 100%;
+        }
+    }
+}
+
+.c-chat-commnet {
+    width: calc(100% - 200px);
+    border-radius: 10px;
+    // padding: 30px;
+    font-size: 1.6rem;
+    line-height: (24 / 16);
+    font-weight: 500;
+    position: relative;
+    aspect-ratio: 690 / 120;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2%;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -20px;
+        transform: translate(-50%, -50%);
+        -webkit-clip-path: polygon(0 50%, 100% 0, 100% 100%);
+        clip-path: polygon(0 50%, 100% 0, 100% 100%);
+        width: 23px;
+        aspect-ratio: 23/22;
+    }
+    @media screen and (max-width:999px) {
+        width: calc(100% - 160px);
+    }
+    @include mq('sp') {
+        width: 72%;
+        padding: 2%;
+        min-height: min(37vw,150px);
+        font-size: min(1.6rem,calc(100vw * (16/390)));
+        &::before{
+            left: -15px;
+            width: 18px;
+        }
+    }
+}
+
+.c-chat-commnet--orange{
+    background: #fbc98e;
+    &::before,&::after{
+        background: #fbc98e;
+    }
+}
+
+.c-chat-commnet--yel{
+    background: #f8f8bd;
+    &::before,&::after{
+        background: #f8f8bd;
+    }
+}
+
+.c-chat-commnet--blue{
+    background: #9bc8ee;
+    &::before,&::after{
+        background: #9bc8ee;
+    }
+}
+
+.c-chta-comment--lg{
+    font-size: 2.5rem;
+    font-weight: 700;
+    @media screen and (max-width:999px) {
+        font-size: 2rem;
+    }
+    @include mq('sp') {
+        font-size: min(1.9rem,calc(100vw * (19/390)));
+    }
+}
+
+.c-ci{/* 丸の装飾 */
+    display: inline-block;
+    position: relative;
+    em{
+        position: relative;
+        z-index: 10;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        background: url(../img/icon_maru.png) no-repeat center center /100%;
+        aspect-ratio: 219/133;
+        width: 110%;
+        transform: translate(-50%,-40%);
+        top: 50%;
+        left: 50%;
+    }
+}
