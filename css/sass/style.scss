@@ -951,7 +951,7 @@ case
 
 .case__wrapper {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   @include mq("sp") {
     display: block;
@@ -1021,6 +1021,7 @@ case
   font-size: 2.4rem;
   font-weight: 700;
   line-height: (27 / 24);
+  margin-top: 30px;
   @media screen and (max-width: 999px) {
     font-size: 2rem;
   }
