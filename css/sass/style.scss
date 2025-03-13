@@ -1027,6 +1027,7 @@ case
   }
   @include mq("sp") {
     font-size: min(2rem, calc(100vw * (20 / 390)));
+    margin-top: 5px;
   }
 }
 
