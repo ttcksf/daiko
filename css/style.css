@@ -1533,6 +1533,7 @@ case
 @media (max-width: 767px) {
   .case__label {
     font-size: min(2rem, 5.1282051282vw);
+    margin-top: 5px;
   }
 }
 
