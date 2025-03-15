@@ -458,7 +458,8 @@ section {
   }
 }
 
-.c-ci { /* 丸の装飾 */
+.c-ci {
+  /* 丸の装飾 */
   display: inline-block;
   position: relative;
 }
@@ -471,10 +472,18 @@ section {
   position: absolute;
   background: url(../img/icon_maru.png) no-repeat center center/100%;
   aspect-ratio: 219/133;
-  width: 110%;
+  width: 102%;
   transform: translate(-50%, -40%);
   top: 50%;
   left: 50%;
+}
+
+.c-ci2 {
+  display: inline-block;
+  position: absolute;
+  bottom: 13%;
+  left: 3%;
+  z-index: 10;
 }
 
 /*------------------------------
