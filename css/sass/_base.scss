@@ -125,6 +125,33 @@ section {
     width: 250px;
   }
 }
+.c-button-tel-lg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 429px;
+  max-width: 100%;
+  border-radius: 10px;
+  padding: 2%;
+  border: 2px solid #37629f;
+  background: #fff;
+  color: #37629f;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 7%;
+    transform: translateY(-50%);
+    background: url(../img/icon_tel.png) no-repeat center center / contain;
+    width: 8%;
+    aspect-ratio: 54/54;
+  }
+  @include mq("sp") {
+    width: 250px;
+  }
+}
 
 .c-button-tel__number {
   display: block;
@@ -194,6 +221,37 @@ section {
   font-weight: 500;
   @include mq("sp") {
     font-size: 1.4rem;
+  }
+}
+
+.c-button-form-lg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 429px;
+  max-width: 100%;
+  border-radius: 10px;
+  // padding: 13px 0 13px 25px;
+  padding: 2%;
+  background: linear-gradient(
+    90deg,
+    rgba(37, 136, 191, 1) 0%,
+    rgba(128, 153, 191, 1) 100%
+  );
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    background: url(../img/icon_mail.png) no-repeat center center / contain;
+    width: 7%;
+    aspect-ratio: 41/31;
+  }
+  @include mq("sp") {
+    width: 250px;
   }
 }
 

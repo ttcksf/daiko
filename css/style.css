@@ -239,6 +239,36 @@ section {
   }
 }
 
+.c-button-tel-lg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 429px;
+  max-width: 100%;
+  border-radius: 10px;
+  padding: 2%;
+  border: 2px solid #37629f;
+  background: #fff;
+  color: #37629f;
+  position: relative;
+}
+.c-button-tel-lg::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 7%;
+  transform: translateY(-50%);
+  background: url(../img/icon_tel.png) no-repeat center center/contain;
+  width: 8%;
+  aspect-ratio: 54/54;
+}
+@media (max-width: 767px) {
+  .c-button-tel-lg {
+    width: 250px;
+  }
+}
+
 .c-button-tel__number {
   display: block;
   font-size: 3.6rem;
@@ -310,6 +340,34 @@ section {
 @media (max-width: 767px) {
   .c-button-form__subtext {
     font-size: 1.4rem;
+  }
+}
+
+.c-button-form-lg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 429px;
+  max-width: 100%;
+  border-radius: 10px;
+  padding: 2%;
+  background: linear-gradient(90deg, rgb(37, 136, 191) 0%, rgb(128, 153, 191) 100%);
+  position: relative;
+}
+.c-button-form-lg::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  background: url(../img/icon_mail.png) no-repeat center center/contain;
+  width: 7%;
+  aspect-ratio: 41/31;
+}
+@media (max-width: 767px) {
+  .c-button-form-lg {
+    width: 250px;
   }
 }
 
